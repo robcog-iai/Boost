@@ -13,7 +13,7 @@
 
 * if you are using the library in the Module `MyModule`, add the module dependency (`Boost`) to your `MyModule.Build.cs` file:
 
-   ```
+   ```csharp
    ..
    PrivateDependencyModuleNames.AddRange(
      new string[]
@@ -31,7 +31,7 @@
 
 * if you are using the third party code in `MyCode.cpp` file, include the boost libraries between such macros([reason and solution](https://answers.unrealengine.com/questions/391017/constant-library-conflicts.html)):
 
-```
+```cpp
 THIRD_PARTY_INCLUDES_START
 #pragma push_macro("check")
 #undef check
@@ -47,7 +47,7 @@ THIRD_PARTY_INCLUDES_END
 
 * depending on which headers you include, you might need more of these macros:
 
-```
+```cpp
 THIRD_PARTY_INCLUDES_START
 #pragma push_macro("CONSTEXPR")
 #undef CONSTEXPR
